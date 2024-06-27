@@ -32,8 +32,6 @@ public class ConstructorTest extends AbstractClass{
     @Test
     public void buns(){
         orderForm.clickSouce();
-        new WebDriverWait(webDriver, Duration.ofSeconds(10)).until(ExpectedConditions
-                .visibilityOfElementLocated(By.xpath(".//div[contains(@class, 'tab_type_current')]")));
         orderForm.clickBuns();
         assertEquals( "Булки", orderForm.isSelected());
     }
