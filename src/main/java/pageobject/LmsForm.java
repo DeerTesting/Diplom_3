@@ -29,12 +29,6 @@ public class LmsForm {
         return driver.findElement(profileText).isDisplayed();
     }
 
-    @Step("Go to LMS by url")
-    public void setUrl(){
-        waitLoginPageLoad();
-        driver.get(Url.LMS_URL);
-    }
-
     @Step("Get LMS url")
     public String getUrl(){
        return driver.getCurrentUrl();

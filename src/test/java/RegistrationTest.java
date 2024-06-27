@@ -48,8 +48,9 @@ public class RegistrationTest extends AbstractClass{
         user = new User(RandomStringUtils.randomAlphabetic(7), RandomStringUtils.randomAlphabetic(10) + "@yandex.ru",  RandomStringUtils.randomAlphabetic(5));
         registrationForm.fillRegForm(user.getName(), user.getEmail(), user.getPassword());
         registrationForm.waitErrorMessage();
-        assertEquals(Url.REGISTRATION_URL, registrationForm.getUrl());
         assertEquals("Некорректный пароль", registrationForm.errorMessageCheck());
+        assertEquals(Url.REGISTRATION_URL, registrationForm.getUrl());
+
 
     }
 

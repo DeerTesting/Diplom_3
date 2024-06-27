@@ -45,8 +45,9 @@ public class RegistrationForm {
         driver.findElement(registrationButton).click();
     }
 
-    public boolean waitErrorMessage(){
-        return driver.findElement(errorText).isDisplayed();
+    public void waitErrorMessage(){
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions
+                .visibilityOfElementLocated(errorText));
     }
     public String getErrorMessage(){
         return driver.findElement(errorText).getText();
@@ -74,6 +75,7 @@ public class RegistrationForm {
 
     @Step("get error message")
     public String errorMessageCheck(){
+        waitErrorMessage();
         return getErrorMessage();
     }
 
